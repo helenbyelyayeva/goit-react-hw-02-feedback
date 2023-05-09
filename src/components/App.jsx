@@ -35,6 +35,7 @@ export class App extends Component {
 
   render() {
     const sum  = this.countTotalFeedback();
+    const positive = this.countPositiveFeedbackPercentage()
     return (
       <>
         <Section title={'Please leave feedback'}>
@@ -50,7 +51,7 @@ export class App extends Component {
               netural={this.state.netural}
               bad={this.state.bad}
               total={sum}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
+              positivePercentage={(positive)}
             />
           ) : (
             <Notification message='There is no feedback'/>
